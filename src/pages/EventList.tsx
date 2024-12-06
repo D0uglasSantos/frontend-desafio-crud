@@ -11,9 +11,17 @@ import {
 import EventForm from "../components/EventForm";
 import EventDeleteConfirmation from "../components/EventDeleteConfirmation";
 
+type Event = {
+  _id: string;
+  nome: string;
+  dataEvento: string;
+  inicioInscricoes: string;
+  fimInscricoes: string;
+};
+
 export default function EventList() {
-  const [events, setEvents] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -49,7 +57,7 @@ export default function EventList() {
   };
 
   // Function to format date correctly
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -78,7 +86,7 @@ export default function EventList() {
         </Modal>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {events.map((event: any) => (
+        {events.map((event: Event) => (
           <div key={event._id} className="bg-white p-4 rounded-lg shadow">
             <h2 className="text-xl font-semibold">{event.nome}</h2>
             <p className="text-gray-600">

@@ -61,7 +61,7 @@ export default function EventAdd() {
             className="w-full transition-all duration-300 ease-in-out focus:ring-2 focus:ring-indigo-500"
           />
           {errors.nome && (
-            <span className="text-red-500 text-sm">{errors.name.message}</span>
+            <span className="text-red-500 text-sm">{errors.nome.message}</span>
           )}
         </div>
 
