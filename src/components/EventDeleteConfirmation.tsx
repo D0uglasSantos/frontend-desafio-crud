@@ -18,7 +18,9 @@ export default function EventDeleteConfirmation({
   const handleDelete = async () => {
     setIsDeleting(true);
     try {
-      await axios.delete(`http://localhost:5000/api/eventos/${event._id}`);
+      await axios.delete(
+        `https://backend-desafio-crud.onrender.com/api/eventos/${event._id}`
+      );
       onSuccess();
       onClose();
     } catch (error) {

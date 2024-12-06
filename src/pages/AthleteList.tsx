@@ -24,7 +24,7 @@ export default function AthleteList() {
 
   const fetchAthletes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/atletas");
+      const res = await axios.get("https://backend-desafio-crud.onrender.com/api/atletas");
       setAthletes(res.data);
     } catch (error) {
       console.error("Failed to fetch athletes", error);
