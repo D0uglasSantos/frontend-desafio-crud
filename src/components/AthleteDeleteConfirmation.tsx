@@ -18,7 +18,7 @@ export default function AthleteDeleteConfirmation({
   const handleDelete = async () => {
     setIsDeleting(true);
     try {
-      await axios.delete(`http://localhost:5000/api/atletas/${athlete._id}`);
+      await axios.delete(`https://backend-desafio-crud.onrender.com/api/atletas/${athlete._id}`);
       onSuccess();
       onClose();
     } catch (error) {

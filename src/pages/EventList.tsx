@@ -24,7 +24,9 @@ export default function EventList() {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/eventos");
+      const res = await axios.get(
+        "https://backend-desafio-crud.onrender.com/api/eventos"
+      );
       setEvents(res.data);
     } catch (error) {
       console.error("Failed to fetch events", error);

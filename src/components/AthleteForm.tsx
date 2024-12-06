@@ -64,24 +64,30 @@ export default function AthleteForm({ athlete, onSuccess }: AthleteFormProps) {
   const onSubmit = async (data: FormSchema) => {
     try {
       if (athlete) {
-        await axios.put(`http://localhost:5000/api/atletas/${athlete._id}`, {
-          nome: data.name,
-          cpf: data.cpf,
-          embarcacoes: data.vessels.map((vessel) => ({
-            _id: vessel._id,
-            nome: vessel.vesselName,
-            codigo: vessel.vesselCode,
-          })),
-        });
+        await axios.put(
+          `https://backend-desafio-crud.onrender.com/api/atletas/${athlete._id}`,
+          {
+            nome: data.name,
+            cpf: data.cpf,
+            embarcacoes: data.vessels.map((vessel) => ({
+              _id: vessel._id,
+              nome: vessel.vesselName,
+              codigo: vessel.vesselCode,
+            })),
+          }
+        );
       } else {
-        await axios.post("http://localhost:5000/api/atletas", {
-          nome: data.name,
-          cpf: data.cpf,
-          embarcacoes: data.vessels.map((vessel) => ({
-            nome: vessel.vesselName,
-            codigo: vessel.vesselCode,
-          })),
-        });
+        await axios.post(
+          "https://backend-desafio-crud.onrender.com/api/atletas",
+          {
+            nome: data.name,
+            cpf: data.cpf,
+            embarcacoes: data.vessels.map((vessel) => ({
+              nome: vessel.vesselName,
+              codigo: vessel.vesselCode,
+            })),
+          }
+        );
       }
       onSuccess();
     } catch (error) {
