@@ -1,15 +1,7 @@
 # **Athlete & Event Management System**
 
 Este projeto é um sistema de gerenciamento de atletas e eventos, desenvolvido com **React** no frontend e **Node.js/Express** no backend.
-
----
-
-## 🚀 **Demonstração**
-
-- **Frontend**: [🌐 Link para o frontend no Vercel](https://challenger-crud.vercel.app/)  
-- **Backend API**: [🌐 Link para o backend no Render](https://backend-desafio-crud.onrender.com)  
-  ➡ Para buscar atletas ou eventos, adicione `/api/atletas` ou `/api/eventos` no final da URL.  
-
+ 
 ---
 
 ## 📂 **Estrutura do Projeto**
