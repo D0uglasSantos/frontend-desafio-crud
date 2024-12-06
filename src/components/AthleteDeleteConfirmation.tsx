@@ -1,0 +1,50 @@
+import { useState } from "react";
+import axios from "axios";
+import { Button } from "./ui/button";
+
+interface AthleteDeleteConfirmationProps {
+  athlete: any;
+  onSuccess: () => void;
+  onClose: () => void;
+}
+
+export default function AthleteDeleteConfirmation({
+  athlete,
+  onSuccess,
+  onClose,
+}: AthleteDeleteConfirmationProps) {
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleDelete = async () => {
+    setIsDeleting(true);
+    try {
+      await axios.delete(`http://localhost:5000/api/atletas/${athlete._id}`);
+      onSuccess();
+      onClose();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      <p className="text-center">
+        Are you sure you want to delete the athlete {athlete.nome}?
+      </p>
+      <div className="flex justify-center space-x-4">
+        <Button onClick={onClose} variant="outline">
+          Cancel
+        </Button>
+        <Button
+          onClick={handleDelete}
+          variant="destructive"
+          disabled={isDeleting}
+        >
+          {isDeleting ? "Deleting..." : "Delete"}
+        </Button>
+      </div>
+    </div>
+  );
+}
