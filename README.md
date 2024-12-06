@@ -1,50 +1,122 @@
-# React + TypeScript + Vite
+# **Athlete & Event Management System**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um sistema de gerenciamento de atletas e eventos, desenvolvido com **React** no frontend e **Node.js/Express** no backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 **Demonstração**
 
-## Expanding the ESLint configuration
+- **Frontend**: [🌐 Link para o frontend no Vercel](https://challenger-crud.vercel.app/)  
+- **Backend API**: [🌐 Link para o backend no Render](https://backend-desafio-crud.onrender.com)  
+  ➡ Para buscar atletas ou eventos, adicione `/api/atletas` ou `/api/eventos` no final da URL.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 📂 **Estrutura do Projeto**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+O projeto está dividido em dois repositórios principais:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Backend**  
+   Repositório: [`backend-desafio-crud`](https://github.com/D0uglasSantos/backend-desafio-crud/tree/main)  
+   Contém o servidor **Node.js/Express** e a API.  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. **Frontend**  
+   Repositório: [`frontend-desafio-crud`](https://github.com/D0uglasSantos/frontend-desafio-crud)  
+   Contém a aplicação **React**.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## 🛠 **Tecnologias Utilizadas**
+
+### **Backend**
+- **Node.js**
+- **Express**
+- **MongoDB**
+- **Mongoose**
+
+### **Frontend**
+- **React**
+- **React Router**
+- **Axios**
+- **Tailwind CSS**
+- **shadcn/ui**
+
+---
+
+## 💻 **Configuração e Execução Local**
+
+### **Backend**
+
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/D0uglasSantos/backend-desafio-crud/tree/main
+
+2. Instale as dependências:  
+   ```bash
+   npm install
+
+3. Crie um arquivo .env na raiz do diretório e adicione suas variáveis de ambiente:  
+   ```bash
+   MONGODB_URI=sua_uri_do_mongodb
+   PORT=5000
+
+4. Inicie o servidor: 
+   ```bash
+   npm run dev
+
+O servidor estará rodando em:
+http://localhost:5000
+
+
+---
+
+### **Frontend**
+
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/D0uglasSantos/frontend-desafio-crud
+
+2. Instale as dependências:
+   ```bash
+   npm install
+
+3. Crie um arquivo .env na raiz do diretório e adicione a URL do backend:
+   ```bash
+   REACT_APP_API_URL=http://localhost:5000
+
+4. Inicie a aplicação:  
+   ```bash
+   npm run dev
+
+O servidor estará rodando em:
+http://localhost:3000
+
+---
+
+## 🌐 **Deploy**
+
+### **Backend (Render)**
+
+1. Crie uma conta no Render.
+2. No dashboard, crie um novo Web Service.
+3. Conecte o repositório GitHub e selecione o branch do backend.
+4. Configure as variáveis de ambiente necessárias.
+5. Faça o deploy! 🎉
+
+### **Frontend (Vercel)**
+
+1. Crie uma conta no Vercel.
+2. No dashboard, importe o projeto do GitHub.
+3. Selecione o repositório e o branch do frontend.
+4. Configure as variáveis de ambiente necessárias.
+5. Faça o deploy! 🚀
+
+## ⚙ **Funcionalidades**
+
+1. Gerenciamento de Atletas (CRUD)
+2. Gerenciamento de Eventos (CRUD)
+3. Interface responsiva e amigável.
+
+## 📜 **Licença**
+
+Este projeto está licenciado sob a licença MIT.
