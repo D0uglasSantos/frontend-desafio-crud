@@ -41,7 +41,7 @@ O projeto está dividido em dois repositórios principais:
 
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/D0uglasSantos/backend-desafio-crud/tree/main
+   git clone https://github.com/D0uglasSantos/backend-desafio-crud
 
 2. Instale as dependências:  
    ```bash
