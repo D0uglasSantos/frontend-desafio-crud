@@ -50,14 +50,14 @@ export default function EventForm({ event, onSuccess }: EventFormProps) {
   const onSubmit = async (data: FormSchema) => {
     try {
       if (event) {
-        await axios.put(`https://backend-desafio-crud.onrender.com/api/eventos/${event._id}`, {
+        await axios.put(`${import.meta.env.VITE_API_URL}/api/eventos/${event._id}`, {
           nome: data.name,
           dataEvento: data.dataEvento,
           inicioInscricoes: data.inicioInscricoes,
           fimInscricoes: data.fimInscricoes,
         });
       } else {
-        await axios.post("https://backend-desafio-crud.onrender.com/api/eventos", {
+        await axios.post("${import.meta.env.VITE_API_URL}/api/eventos", {
           nome: data.name,
           dataEvento: data.dataEvento,
           inicioInscricoes: data.inicioInscricoes,

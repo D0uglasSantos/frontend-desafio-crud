@@ -43,7 +43,7 @@ export default function AthleteAdd() {
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await axios.post("https://backend-desafio-crud.onrender.com/api/atletas", {
+      await axios.post("${import.meta.env.VITE_API_URL}/api/atletas", {
         nome: data.name,
         cpf: data.cpf,
         embarcacoes: data.vessels.map((vessel) => ({

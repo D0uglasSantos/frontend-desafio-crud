@@ -65,7 +65,7 @@ export default function AthleteForm({ athlete, onSuccess }: AthleteFormProps) {
     try {
       if (athlete) {
         await axios.put(
-          `https://backend-desafio-crud.onrender.com/api/atletas/${athlete._id}`,
+          `${import.meta.env.VITE_API_URL}/api/atletas/${athlete._id}`,
           {
             nome: data.name,
             cpf: data.cpf,
@@ -78,7 +78,7 @@ export default function AthleteForm({ athlete, onSuccess }: AthleteFormProps) {
         );
       } else {
         await axios.post(
-          "https://backend-desafio-crud.onrender.com/api/atletas",
+          "${import.meta.env.VITE_API_URL}/api/atletas",
           {
             nome: data.name,
             cpf: data.cpf,

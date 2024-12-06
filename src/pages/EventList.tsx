@@ -25,7 +25,7 @@ export default function EventList() {
   const fetchEvents = async () => {
     try {
       const res = await axios.get(
-        "https://backend-desafio-crud.onrender.com/api/eventos"
+        "${import.meta.env.VITE_API_URL}/api/eventos"
       );
       setEvents(res.data);
     } catch (error) {

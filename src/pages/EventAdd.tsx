@@ -30,7 +30,7 @@ export default function EventAdd() {
   const onSubmit = async (data: FormSchema) => {
     try {
       await axios.post(
-        "https://backend-desafio-crud.onrender.com/api/eventos",
+        "${import.meta.env.VITE_API_URL}/api/eventos",
         {
           nome: data.nome,
           dataEvento: data.dataEvento,

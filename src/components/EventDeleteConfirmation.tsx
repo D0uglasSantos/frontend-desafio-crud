@@ -19,7 +19,7 @@ export default function EventDeleteConfirmation({
     setIsDeleting(true);
     try {
       await axios.delete(
-        `https://backend-desafio-crud.onrender.com/api/eventos/${event._id}`
+        `${import.meta.env.VITE_API_URL}/api/eventos/${event._id}`
       );
       onSuccess();
       onClose();
