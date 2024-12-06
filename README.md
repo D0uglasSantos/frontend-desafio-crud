@@ -91,7 +91,7 @@ http://localhost:3000
 
 1. Crie uma conta no Render.
 2. No dashboard, crie um novo Web Service.
-3. Conecte o repositório GitHub e selecione o branch do backend.
+3. Conecte o repositório de backend do GitHub 
 4. Configure as variáveis de ambiente necessárias.
 5. Faça o deploy! 🎉
 
@@ -99,7 +99,7 @@ http://localhost:3000
 
 1. Crie uma conta no Vercel.
 2. No dashboard, importe o projeto do GitHub.
-3. Selecione o repositório e o branch do frontend.
+3. Selecione o repositório do frontend do frontend.
 4. Configure as variáveis de ambiente necessárias.
 5. Faça o deploy! 🚀
 
