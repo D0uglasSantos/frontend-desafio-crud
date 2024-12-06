@@ -11,9 +11,21 @@ import {
 import AthleteForm from "../components/AthleteForm";
 import AthleteDeleteConfirmation from "../components/AthleteDeleteConfirmation";
 
+type Athlete = {
+  _id: string;
+  nome: string;
+  cpf: string;
+  embarcacoes: [
+    {
+      nome: string;
+      codigo: string;
+    }
+  ];
+};
+
 export default function AthleteList() {
-  const [athletes, setAthletes] = useState([]);
-  const [selectedAthlete, setSelectedAthlete] = useState(null);
+  const [athletes, setAthletes] = useState<Athlete[]>([]);
+  const [selectedAthlete, setSelectedAthlete] = useState<Athlete | null>(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -24,7 +36,9 @@ export default function AthleteList() {
 
   const fetchAthletes = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/api/atletas");
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/atletas`
+      );
       setAthletes(res.data);
     } catch (error) {
       console.error("Failed to fetch athletes", error);
@@ -51,7 +65,10 @@ export default function AthleteList() {
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold text-indigo-600">Athletes</h1>
         <Modal open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
-          <ModalTrigger asChild className="bg-indigo-600 text-white hover:bg-indigo-500 transition-all">
+          <ModalTrigger
+            asChild
+            className="bg-indigo-600 text-white hover:bg-indigo-500 transition-all"
+          >
             <Button onClick={() => setIsAddModalOpen(true)}>Add Athlete</Button>
           </ModalTrigger>
           <ModalContent>
@@ -63,7 +80,7 @@ export default function AthleteList() {
         </Modal>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {athletes.map((athlete: any) => (
+        {athletes.map((athlete: Athlete) => (
           <div key={athlete._id} className="bg-white p-4 rounded-lg shadow">
             <h2 className="text-xl font-semibold">{athlete.nome}</h2>
             <p className="text-gray-600">CPF: {athlete.cpf}</p>

@@ -57,7 +57,7 @@ export default function EventForm({ event, onSuccess }: EventFormProps) {
           fimInscricoes: data.fimInscricoes,
         });
       } else {
-        await axios.post("${import.meta.env.VITE_API_URL}/api/eventos", {
+        await axios.post(`${import.meta.env.VITE_API_URL}/api/eventos`, {
           nome: data.name,
           dataEvento: data.dataEvento,
           inicioInscricoes: data.inicioInscricoes,

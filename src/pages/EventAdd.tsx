@@ -29,15 +29,12 @@ export default function EventAdd() {
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await axios.post(
-        "${import.meta.env.VITE_API_URL}/api/eventos",
-        {
-          nome: data.nome,
-          dataEvento: data.dataEvento,
-          inicioInscricoes: data.inicioInscricoes,
-          fimInscricoes: data.fimInscricoes,
-        }
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/eventos`, {
+        nome: data.nome,
+        dataEvento: data.dataEvento,
+        inicioInscricoes: data.inicioInscricoes,
+        fimInscricoes: data.fimInscricoes,
+      });
       navigate("/events");
     } catch (error) {
       console.error(error);

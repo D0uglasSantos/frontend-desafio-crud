@@ -78,7 +78,7 @@ export default function AthleteForm({ athlete, onSuccess }: AthleteFormProps) {
         );
       } else {
         await axios.post(
-          "${import.meta.env.VITE_API_URL}/api/atletas",
+          `${import.meta.env.VITE_API_URL}/api/atletas`,
           {
             nome: data.name,
             cpf: data.cpf,
