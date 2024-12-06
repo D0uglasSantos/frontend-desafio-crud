@@ -74,7 +74,7 @@ http://localhost:5000
 
 3. Crie um arquivo .env na raiz do diretório e adicione a URL do backend:
    ```bash
-  VITE_API_URL=http://localhost:5000
+   VITE_API_URL=http://localhost:5000
 
 4. Inicie a aplicação:  
    ```bash
